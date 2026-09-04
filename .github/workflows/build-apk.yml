@@ -3,21 +3,21 @@ on:
 workflow_dispatch:
 push:
 branches:
- main
+- main
 jobs:
 build:
 runs-on: ubuntu-latest
 steps:
- name: Checkout
+- name: Checkout
 uses: actions/checkout@v4
- name: Setup Java
+- name: Setup Java
 uses: actions/setup-java@v4
 with:
 distribution: temurin
 java-version: "17"
- name: Build APK
+- name: Build APK
 run: gradle assembleDebug --no-daemon
- name: Upload APK
+- name: Upload APK
 uses: actions/upload-artifact@v4
 with:
 name: SabziYar-APK
